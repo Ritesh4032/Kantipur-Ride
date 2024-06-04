@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kantipur_ride/Dispatcher%20panel/DIspathcherPanel.dart';
+import 'package:kantipur_ride/DisputePanel/Ride_Dispute_Requests/Ride_Dispute.dart';
 import 'package:kantipur_ride/views/Dashboard.dart';
+import 'package:kantipur_ride/DisputePanel/DisputeReasons/DisputeReason.dart';
 
 class DrawerPage extends StatefulWidget {
   @override
@@ -13,23 +15,46 @@ class _DrawerPageState extends State<DrawerPage> {
   bool disputePanelSelected = false;
   bool HeatMapSelected = false;
   bool godsViewSelected = false;
-  List<Map<String, dynamic>> disputePanelOptions = [
-    {'title': 'Dispute Reason>', 'icon': Icons.man_2_rounded, 'onTap': () {}},
-    {
-      'title': 'Ride Dispute Requests>',
-      'icon': Icons.local_taxi,
-      'onTap': () {}
-    },
-    {
-      'title': 'Service Dispute Requests>',
-      'icon': Icons.room_service,
-      'onTap': () {}
-    },
-    {'title': 'Order Dispute Requests>', 'icon': Icons.trolley, 'onTap': () {}},
-  ];
 
   @override
   Widget build(BuildContext context) {
+    List<Map<String, dynamic>> disputePanelOptions = [
+      {
+        'title': 'Dispute Reason>',
+        'icon': Icons.man_2_rounded,
+        'onTap': () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => MyDataTablePage(),
+            ),
+          );
+        }
+      },
+      {
+        'title': 'Ride Dispute Requests>',
+        'icon': Icons.local_taxi,
+        'onTap': () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => RideDispute(),
+            ),
+          );
+        }
+      },
+      {
+        'title': 'Service Dispute Requests>',
+        'icon': Icons.room_service,
+        'onTap': () {}
+      },
+      {
+        'title': 'Order Dispute Requests>',
+        'icon': Icons.trolley,
+        'onTap': () {}
+      },
+    ];
+
     return Drawer(
       backgroundColor: Color(0xFF2075B8),
       child: ListView(
@@ -74,10 +99,11 @@ class _DrawerPageState extends State<DrawerPage> {
             ),
             onTap: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Dashboard(),
-                  ));
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Dashboard(),
+                ),
+              );
               setState(() {
                 dashboardSelected = !dashboardSelected;
               });
@@ -111,10 +137,11 @@ class _DrawerPageState extends State<DrawerPage> {
             ),
             onTap: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => DispatcherPanel(),
-                  ));
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DispatcherPanel(),
+                ),
+              );
               setState(() {
                 dispatcherPanelSelected = !dispatcherPanelSelected;
               });

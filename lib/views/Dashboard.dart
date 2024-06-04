@@ -116,16 +116,25 @@ class _DashboardState extends State<Dashboard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height: 20),
-                  Text(
-                    'Dashboard   ',
-                    style: TextStyle(color: Colors.red, fontSize: 14),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 125),
+                    child: Text(
+                      'DASHBOARD',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 13,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
-                  Text(
-                    'Dashboard Overview',
-                    style: TextStyle(
-                        color: Color(0xFF2075B8),
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 90),
+                    child: Text(
+                      'Dashboard Overview',
+                      style: TextStyle(
+                          color: Color(0xFF2075B8),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w500),
+                    ),
                   ),
                 ],
               ),
@@ -135,7 +144,7 @@ class _DashboardState extends State<Dashboard> {
               'Graph by Country',
               style: TextStyle(
                 color: Color(0xFF2075B8),
-                fontSize: 17,
+                fontSize: 14,
               ),
             ),
             Divider(
@@ -151,6 +160,7 @@ class _DashboardState extends State<Dashboard> {
               width: 300,
               height: 40,
               decoration: BoxDecoration(
+                color: Colors.white,
                 boxShadow: [
                   BoxShadow(
                     spreadRadius: 3,
@@ -399,7 +409,94 @@ class _DashboardState extends State<Dashboard> {
                 ],
               ),
             ),
-            //   DashboardChart(),
+            SizedBox(height: 17),
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      blurRadius: 5,
+                      spreadRadius: 5,
+                    )
+                  ]),
+              height: 200,
+              width: 350,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Total Transport',
+                  style: TextStyle(color: Colors.blue, fontSize: 17),
+                ),
+              ),
+            ),
+            SizedBox(height: 17),
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      blurRadius: 5,
+                      spreadRadius: 5,
+                    )
+                  ]),
+              height: 200,
+              width: 350,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Total Service',
+                  style: TextStyle(color: Colors.blue, fontSize: 17),
+                ),
+              ),
+            ),
+            SizedBox(height: 17),
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      blurRadius: 5,
+                      spreadRadius: 5,
+                    )
+                  ]),
+              height: 200,
+              width: 350,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Total Orders',
+                  style: TextStyle(color: Colors.blue, fontSize: 17),
+                ),
+              ),
+            ),
+            SizedBox(height: 17),
+            Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      blurRadius: 5,
+                      spreadRadius: 5,
+                    )
+                  ]),
+              height: 200,
+              width: 350,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Overall Summary',
+                  style: TextStyle(color: Colors.blue, fontSize: 17),
+                ),
+              ),
+            ),
           ],
         ),
       ),
